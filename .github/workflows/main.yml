@@ -5,9 +5,12 @@ on:
     branches: [ "main" ] 
   workflow_dispatch: 
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # O sarı uyarıyı susturan sihir
+
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-22.04 # Hatanın çözümü: En stabil fabrika!
 
     steps:
       - name: Kodları Çek
