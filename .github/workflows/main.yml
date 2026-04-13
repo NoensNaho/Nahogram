@@ -6,11 +6,11 @@ on:
   workflow_dispatch: 
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # O sarı uyarıyı susturan sihir
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 # Hatanın çözümü: En stabil fabrika!
+    runs-on: ubuntu-22.04 
 
     steps:
       - name: Kodları Çek
@@ -32,7 +32,7 @@ jobs:
         run: mv Nahogram.py main.py
 
       - name: Buildozer ile APK Üret!
-        run: buildozer -v android debug
+        run: yes | buildozer -v android debug
 
       - name: Üretilen APK'yı Bana Ver
         uses: actions/upload-artifact@v4
